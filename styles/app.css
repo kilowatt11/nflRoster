@@ -2,3 +2,13 @@
     display: inline-block;
     
 }
+.title {
+    text-align: center;
+    background-color:#337ab7;
+}
+.name {
+    text-align: center;
+}
+.number {
+    text-align: center;
+}
