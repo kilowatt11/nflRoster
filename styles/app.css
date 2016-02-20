@@ -12,3 +12,8 @@
 .number {
     text-align: center;
 }
+body {
+  background-image:url(https://www.electricchoice.com/wp-content/uploads/2015/08/nfl-energy-efficient.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
