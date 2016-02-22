@@ -9,8 +9,12 @@ app.controller('RosterController', function($scope){
             number: $scope.playerNumber,
         }
         $scope.players.push(player);
+        $scope.playerName='';
+        $scope.playerPosition='';
+        $scope.playerNumber='';
+        console.log($scope.players);
     }
-    
+   // $scope.newPlayer.setPristine();
     
 
     

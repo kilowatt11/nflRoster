@@ -19,11 +19,12 @@
                 <div class="player-card" data-ng-repeat="player in players">
                     <div class="panel panel-heading panel-primary">
                         <h3 class="title panel panel-title panel-primary">Player</h3>
+                        
                     </div>
                     <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
-                    <p class="name">{{name.playerName}}</p>
-                    <p class="number">{{number.playerNumber}}</p>
-                    <p class="position">{{position.playerPosition}}</p>
+                    <p class="name">{{player.name}}</p>
+                    <p class="number">{{player.number}}</p>
+                    <p class="position">{{player.position}}</p>
                 </div>
                 <div class="player-card">
                     <div class="panel panel-heading panel-primary">
@@ -32,6 +33,7 @@
                     <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
                     <p class="name">Player Name</p>
                     <p class="number">Player Number</p>
+                    <p class ="position">Player Position</p>
                 </div>
                 <div class="player-card">
                     <div class="panel panel-heading panel-primary">
@@ -40,6 +42,7 @@
                     <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
                     <p class="name">Player Name</p>
                     <p class="number">Player Number</p>
+                    <p class ="position">Player Position</p>
                 </div>
                 <div class="player-card">
                     <div class="panel panel-heading panel-primary">
@@ -48,6 +51,7 @@
                     <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
                     <p class="name">Player Name</p>
                     <p class="number">Player Number</p>
+                    <p class ="position">Player Position</p>
                 </div>
                 <div class="player-card">
                     <div class="panel panel-heading panel-primary">
@@ -56,25 +60,26 @@
                     <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
                     <p class="name">Player Name</p>
                     <p class="number">Player Number</p>
+                    <p class ="position">Player Position</p>
                 </div>
 
             </div>
         </div>
-        <div class="panel panel-primary">
+        <div class=" createNew panel panel-primary">
             <div class="newPlayer panel-body">
                 <form ng-submit="newPlayer()">
                     <fieldset class="form-group">
                         <label for="playerName">Player Name</label>
-                        <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model= "name.playerName">
+                        <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model= "playerName">
                        
                     </fieldset>
                     <fieldset class="form-group">
                         <label for="playerNumber">Player Number</label>
-                        <input type="number" class="form-control" id="playerNumber" placeholder="Enter Player Number" ng-model= "number.playerNumber">
+                        <input type="number" class="form-control" id="playerNumber" placeholder="Enter Player Number" ng-model= "playerNumber">
                     </fieldset>
                     <fieldset class="form-group">
                         <label for="playerPostion">Player Position</label>
-                        <input type="text" class="form-control" id="playerPostion" placeholder="Enter Player Position" ng-model= "position.playerPosition">
+                        <input type="text" class="form-control" id="playerPostion" placeholder="Enter Player Position" ng-model= "playerPosition">
                     </fieldset>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
