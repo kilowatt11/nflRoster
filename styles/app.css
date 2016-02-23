@@ -2,9 +2,13 @@
     display: inline-block;
     
 }
+.remove {
+    color: white;
+}
 .remove:hover{
     background-color:#337ab7;
     cursor: pointer;
+    
 }
 .title {
     text-align: center;
@@ -28,4 +32,13 @@ body {
     width: 500px;
     margin-left: auto;
     margin-right:auto;
+}
+.back1 {
+    background: rgba(0, 0, 0, 0);
+}
+.back2 {
+    background: rgba(0, 0, 0, 0);
+}
+p {
+    color:white;
 }

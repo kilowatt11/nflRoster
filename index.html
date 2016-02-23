@@ -11,21 +11,21 @@
 
 <body>
     <div class="container" ng-controller="RosterController">
-        <div class="panel panel-primary">
-            <div class="panel-body">
+        <div class="back1 panel panel-primary">
+            <div class="back2 panel-body">
                 <div class="panel panel-heading">
                     <h1 class="title panel panel-title panel-primary">NFL ROSTER</h1>
                 </div>
-                <div class="player-card" data-ng-repeat="player in players">
-                    <span class ="remove" ng-click="deletePlayer($index)">X Click to remove</span>
+                <div class="player-card" data-ng-repeat="player in roster | limitTo:20">
+                    <span class="remove" ng-click="deletePlayer($index)">X Click to remove</span>
                     <div class="panel panel-heading panel-primary">
                         <h3 class="title panel panel-title panel-primary">Player</h3>
-                        
+
                     </div>
 
-                    <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
-                    <p class="name">{{player.name}}</p>
-                    <p class="number">{{player.number}}</p>
+                    <img class="player" ng-src="{{player.photo}}" />
+                    <p class="name">{{player.fullname}}</p>
+                    <p class="number">{{player.pro_team}}</p>
                     <p class="position">{{player.position}}</p>
                 </div>
                 <div class="player-card">
@@ -75,16 +75,27 @@
                         <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model="playerName">
 
                     </fieldset>
-                    <fieldset class="form-group">
+                    <!--<fieldset class="form-group">
                         <label for="playerNumber">Player Number</label>
                         <input type="number" class="form-control" id="playerNumber" placeholder="Enter Player Number" ng-model="playerNumber">
                     </fieldset>
                     <fieldset class="form-group">
                         <label for="playerPostion">Player Position</label>
                         <input type="text" class="form-control" id="playerPostion" placeholder="Enter Player Position" ng-model="playerPosition">
-                    </fieldset>
+                    </fieldset>-->
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <button type="button" class="btn btn-success" ng-click="loadPlayers()">Load Players</button>
+                        <button type="button" class="btn btn-success" ng-click="setPlayers()">Set Players</button>
+                        
+                       
+                    </div>
+                    
+                </div>
+                
+
             </div>
         </div>
 
@@ -101,6 +112,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="app/app.js"></script>
+        <script src="app/services/data.service.js"></script>
         <script src="app/controller/controller.js"></script>
 </body>
 
