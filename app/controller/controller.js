@@ -8,28 +8,32 @@ app.controller('RosterController', function ($scope, DataService) {
     };
     $scope.setPlayers = function () {
         $scope.players = DataService.getAllPlayers();
-        //console.log($scope.players);
+        console.log($scope.players);
     };
     $scope.newPlayer = function () {
         for (var i = 0; i <= $scope.players.length; i++) {
             
-            if ($scope.players[i].fullname == $scope.playerName) {
-                var player = {
-                    name: $scope.players[i].fullname,
-                    position: $scope.players[i].position,
-                    number: $scope.players[i].pro_team
-                }
+            if ($scope.players[i].fullname == $scope.playerName){
+                       $scope.roster.push($scope.players[i]);  
+                //  var player = {
+                //      name: $scope.players.fullname,
+                //    position: $scope.players.position,
+                //     number: $scope.players[i].pro_team
+                    
+                //  }
+                
             }
+            
             if(i == $scope.players.length){
                 console.log('done');
             }
 
         }
-        $scope.roster.push(player);
+        //$scope.roster.push(player);
         $scope.playerName = '';
         $scope.playerPosition = '';
         $scope.playerNumber = '';
-        console.log($scope.players);
+        
     };
 
     $scope.deletePlayer = function (i) {
