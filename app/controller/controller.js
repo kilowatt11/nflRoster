@@ -14,7 +14,10 @@ app.controller('RosterController', function($scope){
         $scope.playerNumber='';
         console.log($scope.players);
     }
-   // $scope.newPlayer.setPristine();
+    $scope.deletePlayer = function (i){
+        $scope.players.splice(i,1)
+    }
+   
     
 
     

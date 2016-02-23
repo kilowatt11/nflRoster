@@ -2,6 +2,10 @@
     display: inline-block;
     
 }
+.remove:hover{
+    background-color:#337ab7;
+    cursor: pointer;
+}
 .title {
     text-align: center;
     background-color:#337ab7;
