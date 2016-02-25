@@ -2,9 +2,10 @@ app.controller('RosterController', function ($scope, DataService) {
     $scope.players = [];
     $scope.roster = [];
     $scope.loadPlayers = function () {
+        console.log('working');
 
         DataService.loadPlayers();
-        //console.log($scope.players)
+        console.log($scope.players)
     };
     $scope.setPlayers = function () {
         $scope.players = DataService.getAllPlayers();
@@ -37,7 +38,7 @@ app.controller('RosterController', function ($scope, DataService) {
     };
 
     $scope.deletePlayer = function (i) {
-        $scope.players.splice(i, 1)
+        $scope.roster.splice(i, 1)
     }
 
 

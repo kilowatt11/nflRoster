@@ -17,10 +17,22 @@ app.factory('DataService', function ($http){
            return players;
         },
     getPlayersByTeam: function (team) {
-            
+            for (var i = 0; i < players.length; i++) {
+                if(players[i].team == team) {
+                    players.push(players[i]);
+                }
+                
+            }
+            return players;
         },
-    getPlayersByPosition: function (team) {
-            
+    getPlayersByPosition: function (position) {
+           
+            for (var i = 0; i < players.length; i++) {
+                if(players[i].position == position){
+                players.push(players[i]); 
+                }      
+            }
+            return players;
         }
     }
 
