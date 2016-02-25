@@ -12,7 +12,7 @@ app.controller('RosterController', function ($scope, DataService) {
         console.log($scope.players);
     };
     $scope.newPlayer = function () {
-        for (var i = 0; i < $scope.players.length; i++) {
+        for (var i = 0; i <= $scope.players.length; i++) {
             
             if ($scope.players[i].fullname == $scope.playerName){
                        $scope.roster.push($scope.players[i]);  
