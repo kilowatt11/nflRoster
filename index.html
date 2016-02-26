@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/app.css">
 
 </head>
 
-<body>
-    <div class="container" ng-controller="RosterController">
+<body ng-controller="RosterController">
+    <div class="container">
 
         <div class="back2 panel-body">
             <div class="panel panel-heading">
@@ -46,66 +47,34 @@
                 <p class="number">Player Number</p>
                 <p class="position">Player Position</p>
             </div>
-            <div class="player-card">
-                <div class="panel panel-heading panel-primary">
-                    <h3 class="title panel panel-title panel-primary">Player</h3>
-                </div>
-                <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
-                <p class="name">Player Name</p>
-                <p class="number">Player Number</p>
-                <p class="position">Player Position</p>
-            </div>
-            <div class="player-card">
-                <div class="panel panel-heading panel-primary">
-                    <h3 class="title panel panel-title panel-primary">Player</h3>
-                </div>
-                <img class="player" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/" />
-                <p class="name">Player Name</p>
-                <p class="number">Player Number</p>
-                <p class="position">Player Position</p>
-            </div>
+           
+           
 
         </div>
-        <div class="list panel panel-default">
-            <div class="panel-body">
-                {{players}}
+        <div class="list panel panel-default pull-right">
+            <div class="nfList panel-body">
+                <button type="button" class="btn btn-success" ng-click="loadPlayers()">Load Players</button>
                 <button type="button" class="btn btn-success" ng-click="setPlayers()">Set Players</button>
-
-            </div>
-        </div>
-    </div>
-
-    <div class=" createNew panel panel-primary">
-        <div class="newPlayer panel-body">
-            <form ng-submit="newPlayer()">
-                <fieldset class="form-group">
-                    <label for="playerName">Player Name</label>
-                    <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model="playerName">
-
-                </fieldset>
-                <!--<fieldset class="form-group">
-                        <label for="playerNumber">Player Number</label>
-                        <input type="number" class="form-control" id="playerNumber" placeholder="Enter Player Number" ng-model="playerNumber">
-                    </fieldset>
+                <form ng-submit="newPlayer()">
                     <fieldset class="form-group">
-                        <label for="playerPostion">Player Position</label>
-                        <input type="text" class="form-control" id="playerPostion" placeholder="Enter Player Position" ng-model="playerPosition">
-                    </fieldset>-->
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <button type="button" class="btn btn-success" ng-click="loadPlayers()">Load Players</button>
-                    <button type="button" class="btn btn-success" ng-click="setPlayers()">Set Players</button>
-
-
-                </div>
+                        <label for="playerName">Player Name</label>
+                        <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model="nameText">
+                    </fieldset>
+                </form>
 
             </div>
-
+            <div>
+                <ul ng-repeat="player in players | orderBy:'fullname' | filter: nameText">
+                    <li>
+                        <p class = "add" ng-model="nameText" ng-click="addPlayer(player.id)">{{player.fullname}}</p>
+                    </li>
+                </ul>
+            </div>
 
         </div>
+       
     </div>
+
 
 
 
