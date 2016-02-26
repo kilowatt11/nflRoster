@@ -28,12 +28,15 @@
 }
 .name {
     text-align: center;
+    color: white;
 }
 .number {
     text-align: center;
+    color:white;
 }
 .position {
     text-align: center;
+    color:white;
 }
 body {
   background-image:url(https://www.electricchoice.com/wp-content/uploads/2015/08/nfl-energy-efficient.jpg);

@@ -66,7 +66,7 @@
             <div>
                 <ul ng-repeat="player in players | orderBy:'fullname' | filter: nameText">
                     <li>
-                        <p class = "add" ng-model="nameText" ng-click="addPlayer(player.id)">{{player.fullname}}</p>
+                        <p class = "add" ng-model="nameText" ng-click="addPlayer(player.id)">{{player.fullname}} : {{player.position}}</p>
                     </li>
                 </ul>
             </div>
