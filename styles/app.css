@@ -1,5 +1,12 @@
 .player-card {
     display: inline-block;
+    width:200px;
+    height:351px;
+    
+}
+.player {
+    width:200px;
+    height:200px
     
 }
 .add {
@@ -67,7 +74,7 @@ body {
     margin-right: 0px;
     margin-top:0px;
     width:350px;
-    height: 400px;
+    height: 405px;
     overflow:scroll;
    
     
@@ -98,4 +105,8 @@ ul {
     height:30px;
     width:30px;
     border:1px solid #337ab7;
+}
+.load {
+    display:inline-block;
+    margin-right: 0px;
 }
