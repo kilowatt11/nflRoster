@@ -56,6 +56,8 @@ body {
     background: rgba(0, 0, 0, 0);
     width: 700px;
     display: inline-block;
+    overflow:scroll;
+    height:575px
 }
 
 .list {
@@ -64,9 +66,10 @@ body {
     display:block;
     margin-right: 0px;
     margin-top:0px;
-    width:400px;
-    height: 815px;
+    width:350px;
+    height: 400px;
     overflow:scroll;
+   
     
     
 }
@@ -75,4 +78,24 @@ body {
 }*/
 .choice {
     display:inline-block;
+}
+.nfList {
+    display:inline-block;
+    margin-right:60px;
+    margin-top:0px;
+    width:250px;
+    color:white;
+}
+.undrafted {
+    display:inline-block;
+    width: 400px;
+    height:700px;
+}
+ul {
+    list-style-type: none;
+}
+.playerThumbNail {
+    height:30px;
+    width:30px;
+    border:1px solid #337ab7;
 }

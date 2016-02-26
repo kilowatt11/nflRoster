@@ -4,6 +4,7 @@ app.controller('RosterController', function ($scope, DataService) {
     $scope.loadPlayers = function () {
 
         DataService.loadPlayers();
+        // $scope.loadmyRoster();
         console.log($scope.players)
     };
     $scope.setPlayers = function () {
@@ -45,8 +46,13 @@ app.controller('RosterController', function ($scope, DataService) {
         
         
     }
-  
-
-
-
+    $scope.savePlayer = function(){
+        localStorage.setItem("myTeam",JSON.stringify($scope.roster))
+        
+        
+    }
+    $scope.loadmyRoster = function (){
+        $scope.roster = JSON.parse(localStorage.getItem("myTeam"))
+    }
+   
 });

@@ -47,32 +47,35 @@
                 <p class="number">Player Number</p>
                 <p class="position">Player Position</p>
             </div>
-           
-           
+
+
 
         </div>
-        <div class="list panel panel-default pull-right">
-            <div class="nfList panel-body">
-                <button type="button" class="btn btn-success" ng-click="loadPlayers()">Load Players</button>
-                <button type="button" class="btn btn-success" ng-click="setPlayers()">Set Players</button>
+        <div class = "undrafted pull-right">
+            <div class="nfList panel-body pull-right">
+                <button type="button" class="btn btn-primary" ng-click="loadPlayers()">Load Players</button>
+                <button type="button" class="btn btn-primary" ng-click="setPlayers()">Set Players</button>
                 <form ng-submit="newPlayer()">
                     <fieldset class="form-group">
-                        <label for="playerName">Player Name</label>
-                        <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name" ng-model="nameText">
+                        <label for="playerName">Search</label>
+                        <input type="text" class="form-control" id="playerName" placeholder="Enter Name or Position" ng-model="nameText">
                     </fieldset>
                 </form>
+                <button type="button" class=" save btn btn-primary" ng-click="savePlayer()">Save</button>
 
             </div>
-            <div>
-                <ul ng-repeat="player in players | orderBy:'fullname' | filter: nameText">
-                    <li>
-                        <p class = "add" ng-model="nameText" ng-click="addPlayer(player.id)">{{player.fullname}} : {{player.position}}</p>
-                    </li>
-                </ul>
-            </div>
+            <div class="list panel panel-default pull-right">
+                <div>
+                    <ul ng-repeat="player in players | orderBy:'fullname' | filter: nameText">
+                        <li>
+                            <p class="add" ng-model="nameText" ng-click="addPlayer(player.id)">{{player.fullname}} : {{player.position}}</p>
+                             <img class="playerThumbNail" ng-src="{{player.photo}}" />
+                        </li>
+                    </ul>
+                </div>
 
+            </div>
         </div>
-       
     </div>
 
 
